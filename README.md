@@ -82,3 +82,56 @@ Bcrypt – password hashing
 JWT – authentication tokens
 
 Multer – file upload handling
+
+
+# 1. Clone repository
+git clone https://github.com/yourusername/anvy2.0.git
+cd anv2.0
+
+# 2. Install dependencies
+npm install
+
+# 3. Setup database with Prisma
+npx prisma migrate dev --name init
+
+# 4. Generate Prisma client
+npx prisma generate
+
+# 5. Run the app
+npm run start:dev
+
+
+
+
+📖 API Documentation (Swagger)
+
+Once the app is running, open:
+
+👉 http://localhost:3333/api
+
+
+🔐 Authentication Flow
+
+Signup – Registers a new user & sends email verification link
+
+Verify – Click link in email to activate account
+
+Signin – Logs in user and returns access_token & refresh_token
+
+Profile – Fetch user profile via JWT
+
+Refresh Token – Get new tokens
+
+Logout – Removes refresh token
+
+🛠️ Password & OTP Flow
+
+Change Password – Requires current password
+
+OTP Sent – Email with 6-digit code
+
+Confirm OTP – Verifies and finalizes password change
+
+Forgot Password – Sends OTP to reset forgotten password
+
+Confirm OTP + New Password – Completes password recovery
