@@ -9,6 +9,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { AuthService } from './auth/auth.service';
 import { ConfigModule } from '@nestjs/config';
 import { UploadsModule } from './uploadsM/uploads.module';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -27,13 +28,14 @@ import { UploadsModule } from './uploadsM/uploads.module';
       {
         name: 'long',
         ttl: 60000,
-        limit: 10
+        limit: 100
       }
     ]),
     AuthModule,
     UserModule,
     PrismaModule,
-    UploadsModule
+    UploadsModule,
+    PostModule
   ],
   controllers: [AppController],
   providers: [
